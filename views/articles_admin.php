@@ -11,11 +11,11 @@
   <div class="container">
     <h1>My first blog</h1>
     <div class="">
-      <a href="index.php?action=add">Добавить статью</a>
+      <a href="index.php?action=add">Add</a>
       <table class="admin-table">
         <tr>
-          <th>Дата</th>
-          <th>Заголовок</th>
+          <th>Date</th>
+          <th>Caption</th>
           <th></th>
           <th></th>
         </tr>
@@ -24,10 +24,10 @@
             <td><?=$a['date']?></td>
             <td><?=$a['title']?></td>
             <td>
-              <a href="index.php?action=edit&id=<?=$a['id']?>">Редактировать</a>
+              <a href="index.php?action=edit&id=<?=$a['id']?>">Edit</a>
             </td>
             <td>
-              <a href="index.php?action=delete&id=<?=$a['id']?>">Удалить</a>
+              <a href="index.php?action=delete&id=<?=$a['id']?>">Delelte</a>
             </td>
           </tr>
         <?php endforeach ?>
