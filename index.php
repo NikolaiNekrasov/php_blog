@@ -26,23 +26,26 @@
 
 require_once("database.php");
 require_once("models/articles.php");
+$link = db_connect();
+$articles = articles_all($link);
 $page = $_GET['page'];
      if (!isset($page)) {
         require('views/main.php');
      } elseif ($page == 'articles') 
-     {$link = db_connect();
-     $articles = articles_all($link);
+     {
         require('views/articles.php');
      } elseif ($page == 'article') {
        $id = $_GET['id'];
-       $good = [];
-       foreach ($goods as $article) {
-           if ($article['id'] == $id) {
-                $good = $article;
+       $article = [];
+         foreach ($articles as $a) {
+           if ($a['id'] == $id) {
+                $article = $a;
                 break;
            }
        }
-       require('views/article.php');
+         require('views/article.php');
+      
+      
      }
 
 /* require_once("database.php");

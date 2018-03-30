@@ -7,5 +7,8 @@
           </h3>
           <em>Published: <?=$article['date']?></em>
           <p><?=$article['content']?></p>
+          <h1 id="openedProduct-name">
+       <?php echo $article['title'];?>
+    </h1>
         </div>
 
