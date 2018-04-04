@@ -51,6 +51,9 @@
     <div class="carousel-inner">
         <div class="carousel-item active">
             <img src="img/background.png">
+            <div class="carousel-caption">
+                <h1 class="display-2">Bootstrap</h1>
+            </div>
         </div>
         <div class="carousel-item active">
             <img src="img/background2.png">
