@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="eng">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My blog</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <link href="style.css" rel="stylesheet">
-    <title>My blog</title>
+    
 </head>
 <body>
 
@@ -53,12 +54,15 @@
             <img src="img/background.png">
             <div class="carousel-caption">
                 <h1 class="display-2">Bootstrap</h1>
+                <h3>Complete Website Layout</h3>
+                <button type="button" class="btn btn-outline-light btn-lg">VIEW DEMO</button>
+                <button type="button" class="btn btn-primary btn-lg">Get Started</button>
             </div>
         </div>
-        <div class="carousel-item active">
+        <div class="carousel-item">
             <img src="img/background2.png">
         </div>
-        <div class="carousel-item active">
+        <div class="carousel-item">
             <img src="img/background3.png">
         </div>
     </div>
