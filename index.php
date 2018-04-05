@@ -262,7 +262,7 @@
        </div>
        <div class="col-md-4">
            <hr class="light">
-           <h5>Our hours</h5>
+           <h5>Service area</h5>
            <hr class="light">
            <p>City, State, 0000</p>
            <p>City, State, 0000</p>
@@ -270,7 +270,7 @@
            <p>City, State, 0000</p>
        </div>
        <div class="col-12">
-           <hr class="light">
+           <hr class="light-100">
            <h5>&copy; test.com</h5>
        </div>
     </div>
