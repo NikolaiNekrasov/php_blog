@@ -221,6 +221,7 @@
             <img src="img/bootstrap2.png" class="img-fluid">
         </div>
     </div>
+    <hr class="my-4">
 </div>
 <!--- Connect -->
 <div class="conteiner-fluid padding">
