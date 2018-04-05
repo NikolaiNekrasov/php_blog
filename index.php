@@ -81,7 +81,17 @@
 </div>
 
 <!--- Welcome Section -->
-
+<div class="container-fluid padding">
+    <div class="row welcome text-center">
+        <div class="col-12">
+            <h1 class="display-4">Built with ease.</h1>
+        </div>
+        <hr>
+        <div class="col-12">
+            <p class="lead">Welcome to my Bootstrap 4 website turtorial! Bootstrap is a free and opensource front-end</p>
+        </div>
+    </div>
+</div>
 
 <!--- Three Column Section -->
 
