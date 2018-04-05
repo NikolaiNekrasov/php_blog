@@ -208,11 +208,79 @@
 
 <!--- Two Column Section -->
 
-
+<div class="container-fluid padding">
+    <div class="row padding">
+        <div class="col-lg-6">
+            <h2>Our Philosophy</h2>
+            <p>Здесь будет текст для главной страницы. Здесь будет текст для главной страницы. Здесь будет текст для главной страницы. Здесь будет текст для главной страницы. Здесь будет текст для главной страницы. </p>
+               <p>Здесь будет текст для главной страницы. Здесь будет текст для главной страницы. Здесь будет текст для главной страницы. Здесь будет текст для главной страницы. Здесь будет текст для главной страницы. Здесь будет текст для главной страницы.</p> 
+               <p> Здесь будет текст для главной страницы. Здесь будет текст для главной страницы. Здесь будет текст для главной страницы. Здесь будет текст для главной страницы.</p>
+               
+        </div>
+        <div class="col-lg-6">
+            <img src="img/bootstrap2.png" class="img-fluid">
+        </div>
+    </div>
+</div>
 <!--- Connect -->
-
+<div class="conteiner-fluid padding">
+    <div class="row text-center padding">
+        <div class="col-12">
+            <h2>Connect</h2>
+        </div>
+        <div class="col-12 social padding">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-google-plus-g"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+</div>
 
 <!--- Footer -->
+<footer>
+    <div class="conteiner-fluid padding">
+    <div class="row text-center padding">
+       <div class="col-md-4">
+           <img src="img/w3newbie.png">
+           <hr class="light">
+           <p>555-555-55</p>
+           <p>email@email.com</p>
+           <p>100 street Name</p>
+           <p>City, State, 0000</p>
+       </div>
+       <div class="col-md-4">
+           <hr class="light">
+           <h5>Our hours</h5>
+           <hr class="light">
+           <p>Monday: 9am - 5 pm</p>
+           <p>Monday: 9am - 5 pm</p>
+           <p>Monday: 9am - 5 pm</p>
+           <p>Monday: 9am - 5 pm</p>
+       </div>
+       <div class="col-md-4">
+           <hr class="light">
+           <h5>Our hours</h5>
+           <hr class="light">
+           <p>City, State, 0000</p>
+           <p>City, State, 0000</p>
+           <p>City, State, 0000</p>
+           <p>City, State, 0000</p>
+       </div>
+       <div class="col-12">
+           <hr class="light">
+           <h5>&copy; test.com</h5>
+       </div>
+    </div>
+</div>
+    
+</footer>
+
+
+
+
+
 <header>
     <div id="headerInside">
         <div id="logo"></div>
