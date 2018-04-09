@@ -1,0 +1,17 @@
+{
+    "name": "nick/myblog",
+    "authors": [
+        {
+            "name": "Nikolai Nekrasov",
+            "email": "nikolai.nekrasov@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+    	"psr-4": {
+    		"Engine\\": "engine",
+    		"Engine\\DI\\": "engine/DI"
+
+    	}
+    }
+}
