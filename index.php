@@ -1,26 +1,45 @@
 <!DOCTYPE html>
-<html lang="eng">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My blog</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link href="style.css" rel="stylesheet">
+    
 </head>
 <body>
-<header>
-    <div id="headerInside">
-        <div id="logo"></div>
-        <div id="companyName">My blog</div>
-        <div id="navWrap">
-            <a href="/">
-                Main
-            </a>
-            <a href="index.php?page=articles">
-                Blog
-            </a>
-        </div>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+<div class="container-fluid">
+    <a class="navbar-brand" href="#"><img src="img/logo.png"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+        <span class="navbar-toggler-icon"></span>             
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="index.php?page=articles">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin">Admin Panel</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+        </ul>
     </div>
-</header>
+</div>
+</nav>
+
 <div id="content">
 <?php
 
@@ -57,34 +76,49 @@ $page = $_GET['page'];
   include("views/articles.php"); */
 ?>
 </div>
+
+
+
+
+<!--- Footer -->
 <footer>
-    <div id="footerInside">
-
-        <div id="contacts">
-            <div class="contactWrap">
-               
-                nikolai.nekrasov@gmail.com
-            </div>
-            <div class="contactWrap">
-               
-                +7-926-521-75-80
-            </div>
-
-
-        <div id="footerNav">
-            <a href="/">Blog</a>
-            <a href="index.php?page=shop">Admin Panel</a>
-        </div>
-
-        <div id="social">
-            
-        </div>
-
-        <div id="copyrights">&copy; My Blog</div>
+    <div class="conteiner-fluid padding">
+    <div class="row text-center padding">
+       <div class="col-md-4">
+           <img src="img/w3newbie.png">
+           <hr class="light">
+           <p>555-555-55</p>
+           <p>email@email.com</p>
+           <p>100 street Name</p>
+           <p>City, State, 0000</p>
+       </div>
+       <div class="col-md-4">
+           <hr class="light">
+           <h5>Our hours</h5>
+           <hr class="light">
+           <p>Monday: 9am - 5 pm</p>
+           <p>Monday: 9am - 5 pm</p>
+           <p>Monday: 9am - 5 pm</p>
+           <p>Monday: 9am - 5 pm</p>
+       </div>
+       <div class="col-md-4">
+           <hr class="light">
+           <h5>Service area</h5>
+           <hr class="light">
+           <p>City, State, 0000</p>
+           <p>City, State, 0000</p>
+           <p>City, State, 0000</p>
+           <p>City, State, 0000</p>
+       </div>
+       <div class="col-12">
+           <hr class="light-100">
+           <h5>&copy; test.com</h5>
+       </div>
     </div>
+</div>
+    
 </footer>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</body>
+
+  
+ </body>
 </html>
