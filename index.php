@@ -119,10 +119,6 @@ $page = $_GET['page'];
     
 </footer>
 
-
-
-
-
   
  </body>
 </html>

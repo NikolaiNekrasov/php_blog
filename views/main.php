@@ -126,41 +126,7 @@
     </div>
 </div>
 
-<!--- Cards -->
-<div class="container-fluid padding">
-    <div class="row padding">
-        <div class="col-md-4">
-            <div class="card">
-                <img class="card-img-top" src="img/team1.png">
-                <div class="card-body">
-                    <h4 class="card-title">John Doe</h4>
-                    <p class="card-text">Fohn is an Internet entrepreneur with almost 20 years of experiens</p>
-                    <a href="#" class="btn btn-outline-secondary">See Progile</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <img class="card-img-top" src="img/team2.png">
-                <div class="card-body">
-                    <h4 class="card-title">Mary Jo</h4>
-                    <p class="card-text">Mary is an Internet entrepreneur with almost 10 years of experiens</p>
-                    <a href="#" class="btn btn-outline-secondary">See Progile</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <img class="card-img-top" src="img/team3.png">
-                <div class="card-body">
-                    <h4 class="card-title">Phil Ho</h4>
-                    <p class="card-text">Phil is an Internet entrepreneur with almost 2 years of experiens</p>
-                    <a href="#" class="btn btn-outline-secondary">See Progile</a>
-                </div>
-            </div>
-        </div>
-</div>
-</div>
+
 
 <!--- Two Column Section -->
 
