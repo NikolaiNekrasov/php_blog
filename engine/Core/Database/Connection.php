@@ -2,6 +2,8 @@
 
 namespace Engine\Core\Database;
 
+use \PDO;
+
 class Connection {
 
 	private $link;
@@ -21,11 +23,20 @@ class Connection {
 
 	private function connect()
 	{
-		$config = require_once 'config.php';
+		$config = [
 
-		$dsn = 'mysql:host='.$config['host']';dbname='.$config['dbname']';charset='.$config['charset'];
+		      'host'     => 'localhost',
+		      'db_name'   => 'teast_pdo',
+		      'username' => 'root',
+		      'password' => '',
+		      'charset'  => 'utf8'
 
-		this->link = new PDO($dsn, '.$config['username']', '.$config['password']');
+
+		];
+
+		$dsn = 'mysql:host='.$config['host'].';dbname='.$config['dbname'].';charset='.$config['charset'];
+
+		$this->link = new PDO($dsn, $config['username'], $config['password']);
 
 		return $this;
 
@@ -53,7 +64,7 @@ class Connection {
 	{
 		$exe = $this->execute($sql);
 
-		result = $exe->fetchAll(PDO::FETCH_ASSOC);
+		$result = $exe->fetchAll(PDO::FETCH_ASSOC);
 
 		if($result === false) {
 			return [];
