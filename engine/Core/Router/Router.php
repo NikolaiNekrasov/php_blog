@@ -15,13 +15,19 @@ class Router
 	{
 		$this->host = $host;
 	}
+	/**
+	* @param $key
+	* @param $pattern
+	* @param $controller
+	* @param string $method
+	*/
 
 	public function add($key, $pattern, $controller, $method = 'GET')
 	{
 		$this->routes[$key] = [
-		     'pattern' => $pattern,
+		     'pattern'    => $pattern,
 		     'controller' => $controller,
-		     'method' => $method
+		     'method'     => $method
 
 
 		];
