@@ -15,7 +15,7 @@ class DispatchedRoute
 	public function __construct($controller, $parameters = [])
 	{
 		$this->controller = $controller;
-		$this->parametrs = $parameters;
+		$this->parameters = $parameters;
 	}
 
 	/**
