@@ -6,6 +6,7 @@ class Router
 {
 	private $routes = [];
 	private $host;
+	private $dispatcher;
 	/**
 	* Router constructor
 	* @param $host
@@ -33,5 +34,22 @@ class Router
 		];
 
 	}
+
+	public function dispatch($method, $uri)
+	{
+
+	}
+
+	public function getDispatcher()
+	{
+		if($this->dispather == null)
+		{
+
+		}
+
+		return $this->dispather;
+
+	}
+
+
 }
-?>

@@ -26,4 +26,3 @@ class Provider extends AbstractProvider
 	}
 
 }
- ?>
