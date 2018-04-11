@@ -12,10 +12,10 @@ class DispatchedRoute
 	* @param $controller
 	* @param array $parametrs
 	*/
-	public function __construct($controller, $parametrs = [])
+	public function __construct($controller, $parameters = [])
 	{
 		$this->controller = $controller;
-		$this->parametrs = $parametrs;
+		$this->parametrs = $parameters;
 	}
 
 	/**
@@ -31,6 +31,6 @@ class DispatchedRoute
 	*/
 	public function getParameters()
 	{
-		return $this->parametrs;
+		return $this->parameters;
 	}
 }
