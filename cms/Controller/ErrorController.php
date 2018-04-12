@@ -3,20 +3,8 @@
 
 namespace Cms\Controller;
 
-use Engine\Controller;
-
-
-class ErrorController extends Controller
+class ErrorController extends CmsController
 {
-
-    /**
-     * ErrorController constructor.
-     * @param $di
-     */
-    public function __construct($di)
-    {
-        parent::__construct($di);
-    }
 
     public function page404()
     {

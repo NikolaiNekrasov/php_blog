@@ -27,23 +27,27 @@ class Cms
 	*/
 	public function run() 
 	{
-		$this->router->add('home', '/', 'HomeController:index');
-        $this->router->add('news', '/news', 'HomeController:news');
-		//$this->router->add('product', '/user/12', 'ProductController:index');
+	    try {
+            $this->router->add('home', '/', 'HomeController:index');
+            $this->router->add('news', '/news', 'HomeController:news');
+            //$this->router->add('product', '/user/12', 'ProductController:index');
 
-		$routerDispatch = $this->router->dispatch(Common::getMethod(), Common::getPathUrl());
+            $routerDispatch = $this->router->dispatch(Common::getMethod(), Common::getPathUrl());
 
-		if($routerDispatch == null)
-        {
-            $routerDispatch = new DispatchedRoute('ErrorController:page404');
+            if ($routerDispatch == null) {
+                $routerDispatch = new DispatchedRoute('ErrorController:page404');
+            }
+
+            list($class, $action) = explode(':', $routerDispatch->getController(), 2);
+
+            $controller = '\\Cms\\Controller\\' . $class;
+            $parameters = $routerDispatch->getParameters();
+            call_user_func_array([new $controller($this->di), $action], $parameters);
+
+        } catch (\Exсeption $e) {
+	        $e->getMessage();
+	        exit;
         }
-
-		list($class, $action) = explode(':', $routerDispatch->getController(), 2);
-
-		$controller = '\\Cms\\Controller\\' . $class;
-
-		call_user_func_array([new $controller($this->di), $action], $routerDispatch->getParameters());
-
 		//print_r($routerDispatch);
         //print_r($class);
         //echo '<br>';
