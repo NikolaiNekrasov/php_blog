@@ -2,6 +2,7 @@
 
 namespace Engine;
 
+use Engine\Core\Router\DispatchedRoute;
 use Engine\Helper\Common;
 
 class Cms
@@ -31,6 +32,11 @@ class Cms
 		//$this->router->add('product', '/user/12', 'ProductController:index');
 
 		$routerDispatch = $this->router->dispatch(Common::getMethod(), Common::getPathUrl());
+
+		if($routerDispatch == null)
+        {
+            $routerDispatch = new DispatchedRoute('ErrorController:page404');
+        }
 
 		list($class, $action) = explode(':', $routerDispatch->getController(), 2);
 
