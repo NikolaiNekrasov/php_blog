@@ -31,7 +31,7 @@ class UrlDispatcher
 	* @param $key
 	* @param $pattern
 	*/
-	public function addPattern($key)
+	public function addPattern($key, $pattern)
 	{
 		$this->patterns[$key] = $pattern;
 	}
@@ -47,8 +47,27 @@ class UrlDispatcher
 
 	public function register($method, $pattern, $controller)
 	{
-		$this->routes[strtoupper($method)][$pattern] = $controller;
+	    print_r($pattern);
+	    echo '<br>';
+	    $convert = $this->convertPattern($pattern);
+		$this->routes[strtoupper($method)][$convert] = $controller;
 	}
+
+	private function convertPattern($pattern)
+    {
+        if(strpos($pattern, '(') === false)
+        {
+            return $pattern;
+        }
+
+        return preg_replace_callback('#\((\w+):(\w+)\)#', [$this, 'replacePattern'], $pattern);
+    }
+
+    private function replacePattern($matches)
+    {
+        return '?<' .$matches[1]. '>'. strtr($matches[2], $this->patterns) .')';
+    }
+
 
 	/**
 	* @param $method

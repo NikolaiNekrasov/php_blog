@@ -5,12 +5,12 @@ namespace Engine\Core\Router;
 class DispatchedRoute
 {
 	private $controller;
-	private $parametrs;
+	private $parameters;
 
 	/**
 	* DispatshedRoute constructor
 	* @param $controller
-	* @param array $parametrs
+	* @param array $parameters
 	*/
 	public function __construct($controller, $parameters = [])
 	{
