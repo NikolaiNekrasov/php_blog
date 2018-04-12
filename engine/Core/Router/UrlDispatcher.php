@@ -92,7 +92,7 @@ class UrlDispatcher
 	* @return DispatchedRoute
 	*/
 
-	private function doDispatch($method, $uri)
+    private function doDispatch($method, $uri)
 	{
 		foreach ($this->routes($method) as $route => $controller)
 		{

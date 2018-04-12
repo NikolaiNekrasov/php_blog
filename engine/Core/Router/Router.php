@@ -35,12 +35,13 @@ class Router
 
 	}
 
-	/**
-	* @param $method
-	* @param $uri
-	* @return DispachedRoute
-	*/
-	public function dispatch($method, $uri)
+
+    /**
+     * @param $method
+     * @param $uri
+     * @return DispatchedRoute|Void
+     */
+    public function dispatch($method, $uri)
 	{
 		return $this->getDispatcher()->dispatch($method, $uri);
 
