@@ -65,7 +65,7 @@ class UrlDispatcher
 
     private function replacePattern($matches)
     {
-        return '?<' .$matches[1]. '>'. strtr($matches[2], $this->patterns) .')';
+        return '(?<' .$matches[1]. '>'. strtr($matches[2], $this->patterns) .')';
     }
 
 
@@ -101,7 +101,7 @@ class UrlDispatcher
 			if(preg_match($pattern, $uri, $parameters))
 			{
 				return new DispatchedRoute($controller, $parameters);
-			} 			
+			}
 		}
 	}
 }

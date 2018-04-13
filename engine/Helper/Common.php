@@ -29,7 +29,7 @@ class Common
 	/**
 	* @return bool|string
 	*/
-	function getPathurl()
+	function getPathUrl()
 	{
 		$pathUrl = $_SERVER['REQUEST_URI'];
 

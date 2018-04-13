@@ -44,11 +44,10 @@ class Cms
             $controller = '\\Cms\\Controller\\' . $class;
             $parameters = $routerDispatch->getParameters();
             call_user_func_array([new $controller($this->di), $action], $parameters);
-
-        } catch (\Exсeption $e) {
-	        $e->getMessage();
+            }catch (\Exception $e) {
+	        echo $e->getMessage();
 	        exit;
-        }
+            }
 		//print_r($routerDispatch);
         //print_r($class);
         //echo '<br>';
