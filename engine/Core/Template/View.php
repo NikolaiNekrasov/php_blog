@@ -10,6 +10,9 @@ class View
 {
     protected  $theme;
 
+    /**
+     * View constructor.
+     */
     public function __construct()
     {
         $this->theme = new Theme();
@@ -30,6 +33,8 @@ class View
                 sprintf('Template "%s" not found in "%s"', $template, $templatePath)
             );
         }
+
+        $this->theme->setData($vars);
 
         extract($vars);
 

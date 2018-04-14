@@ -1,1 +1,1 @@
-header<br>
+header<?= $this->data['name'] ?><br>

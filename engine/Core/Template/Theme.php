@@ -13,6 +13,8 @@ class Theme
 
     public $url = '';
 
+    protected  $data = [];
+
     /**
      * @param null $name
      */
@@ -31,18 +33,61 @@ class Theme
 
     }
 
+    /**
+     * @param string $name
+     * @throws \Exception
+     */
     public function footer($name = '')
     {
+        $name = (string) $name;
+        $file = 'footer';
+
+        if($name !== '')
+        {
+            $file = sprintf(self::RULES_NAME_FILE['footer'],$name);
+
+        }
+
+        $this->loadTemplateFile($file);
 
     }
 
+    /**
+     * @param string $name
+     * @throws \Exception
+     */
     public function sidebar($name = '')
     {
+        $name = (string) $name;
+        $file = 'sidebar';
+
+        if($name !== '')
+        {
+            $file = sprintf(self::RULES_NAME_FILE['sidebar'],$name);
+
+        }
+
+        $this->loadTemplateFile($file);
 
     }
 
+    /**
+     * @param string $name
+     * @param array $data
+     * @throws \Exception
+     */
     public function block($name = '', $data = [])
     {
+        $name = (string) $name;
+        $file = 'block';
+
+        if($name !== '')
+        {
+            $this->loadTemplateFile($name, $data);
+
+        }
+
+
 
     }
 
@@ -67,6 +112,23 @@ class Theme
             );
         }
 
+    }
+
+    /**
+     * @return array
+     */
+    public function getData()
+    {
+        return $this->data;
+    }
+
+    /**
+     * @param $data
+     * @return mixed
+     */
+    public function setData($data)
+    {
+        return $this->data = $data;
     }
 
 }
