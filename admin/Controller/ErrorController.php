@@ -1,8 +1,8 @@
 <?php
 
-namespace Cms\Controller;
+namespace Admin\Controller;
 
-class ErrorController extends CmsController
+class ErrorController extends AdminController
 {
 
     public function page404()
