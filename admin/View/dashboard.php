@@ -10,10 +10,10 @@
     <title>Админ-панель</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="/admin/Assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/dashboard.css" rel="stylesheet">
+    <link href="/admin/Assets/css/dashboard.css" rel="stylesheet">
 
     <!-- simplelineicons for this template -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
@@ -66,9 +66,7 @@
         <br><br><br>
         <div style="text-align:center;">
             <h1><i class="icon-heart icons"></i> Welcome to CMS</h1>
-            Watch on channel  <a href="https://www.youtube.com/channel/UCOy440HnmqURkjG9CrBi6nw?disable_polymer=true">
-                <i class="icon-social-youtube icons"></i> Developer Start
-            </a>
+
         </div>
     </div>
 </main>
@@ -77,6 +75,6 @@
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" crossorigin="anonymous"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="/admin/Assets/js/bootstrap.min.js"></script>
 </body>
 </html>
