@@ -51,6 +51,7 @@ class View
         echo ob_get_clean();
     }
 
+
     /**
      * @param $template
      * @param null $env
@@ -58,17 +59,12 @@ class View
      */
     private function getTemplatePath($template, $env = null)
     {
-        switch ($env) {
-
-            case 'Admin':
-                return ROOT_DIR . '/View/' . $template . '.php';
-                break;
-            case 'Cms':
-                return ROOT_DIR . '/content/theme/default/' . $template . '.php';
-                break;
-            default:
-                return ROOT_DIR . '/View/' . $template . '.php';
+        if($env == 'Cms')
+        {
+            return ROOT_DIR . '/content/themes/default/' . $template . '.php';
         }
+
+        return ROOT_DIR . '/View/' . $template . '.php';
     }
 
 
