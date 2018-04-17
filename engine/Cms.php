@@ -28,11 +28,7 @@ class Cms
 	public function run() 
 	{
 	    try {
-            $this->router->add('home', '/', 'HomeController:index');
-            $this->router->add('news', '/news', 'HomeController:news');
-            $this->router->add('news_single', '/news/(id:int)', 'HomeController:news');
-
-
+            require_once __DIR__ . '/../' . mb_strtolower(ENV) . '/Route.php';
             $routerDispatch = $this->router->dispatch(Common::getMethod(), Common::getPathUrl());
 
             if ($routerDispatch == null) {
@@ -41,14 +37,13 @@ class Cms
 
             list($class, $action) = explode(':', $routerDispatch->getController(), 2);
 
-            $controller = '\\Cms\\Controller\\' . $class;
+            $controller = '\\' . ENV . '\\Controller\\' . $class;
             $parameters = $routerDispatch->getParameters();
             call_user_func_array([new $controller($this->di), $action], $parameters);
-
-        } catch (\Exсeption $e) {
-	        $e->getMessage();
+            }catch (\Exception $e) {
+	        echo $e->getMessage();
 	        exit;
-        }
+            }
 		//print_r($routerDispatch);
         //print_r($class);
         //echo '<br>';

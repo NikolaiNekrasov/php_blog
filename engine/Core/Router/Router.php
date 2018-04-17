@@ -5,8 +5,9 @@ namespace Engine\Core\Router;
 class Router
 {
 	private $routes = [];
+    private $dispatcher;
 	private $host;
-	private $dispatcher;
+
 	/**
 	* Router constructor
 	* @param $host
@@ -67,6 +68,4 @@ class Router
 		return $this->dispatcher;
 
 	}
-
-
 }
