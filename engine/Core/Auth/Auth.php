@@ -9,7 +9,7 @@ use Engine\Core\Cookie;
 
 class Auth implements AuthInterface
 {
-    protected $authorized = false;
+    public $authorized = false;
     protected $user;
 
     /**
