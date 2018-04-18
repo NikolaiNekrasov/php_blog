@@ -37,9 +37,22 @@ class LoginController extends Controller
     public function authAdmin()
     {
         $params = $this->request->post;
-        $this->auth->authorize('qqwqwqwqwwq');
 
-        print_r($params);
-    }
+        $query = $this->db->query('
+            SELECT *
+            FROM `user`
+            WHERE email="' . $params['email'] . '"
+            AND password="' . md5($params['password']) . '" 
+            LIMIT 1
+             ');
+
+        print_r($query);exit;
+
+        //$this->auth->authorize('qqwqwqwqwwq');
+
+        if($this->authorized()){
+            print_r($params);
+        }
+            }
 
 }

@@ -6,11 +6,13 @@ namespace Engine\Core\Config;
 
 class Config
 {
+
     /**
      * @param $key
      * @param string $group
      * @return null
-      */
+     * @throws \Exception
+     */
     public  static function item($key, $group = 'main')
     {
         $groupItems = static::file($group);
