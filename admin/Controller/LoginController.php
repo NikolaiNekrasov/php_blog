@@ -46,7 +46,8 @@ class LoginController extends Controller
             LIMIT 1
              ');
 
-        print_r($query);exit;
+        print_r($query);
+        exit;
 
         //$this->auth->authorize('qqwqwqwqwwq');
 
