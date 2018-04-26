@@ -24,6 +24,16 @@ class LoginController extends Controller
         parent::__construct($di);
 
         $this->auth = new Auth();
+
+        if ($this->auth->hashUser() !== null) {
+            $this->auth->authorize($this->auth->hashUser());
+        }
+
+        if ($this->auth->authorized()) {
+            // redirect
+            header( 'Location: /admin/', true, 301 );
+            exit;
+        }
     }
 
 
@@ -47,13 +57,24 @@ class LoginController extends Controller
             LIMIT 1
              ');
 
-        print_r($query);exit;
+        if (!empty($query)) {
+            $user = $query[0];
 
-        //$this->auth->authorize('qqwqwqwqwwq');
+            if ($user['role'] == 'admin') {
+                $hash = md5($user['id'] . $user['email'] . $user['password'] . $this->auth->salt());
 
-        if($this->authorized()){
-            print_r($params);
+                $this->db->execute('
+                    UPDATE user
+                    SET hash = "' . $hash . '"
+                    WHERE id = "' . $user['id'] . '"
+                ');
+
+                $this->auth->authorized($hash);
+
+                header('Location: /admin/login/', true, 301);
+                exit;
+            }
         }
-        }
+    }
 
 }

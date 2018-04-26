@@ -10,7 +10,7 @@ use Engine\Helper\Cookie;
 class Auth implements AuthInterface
 {
     protected $authorized = false;
-    protected $user;
+    protected $hash_user;
 
     /**
      * @return bool
@@ -24,9 +24,9 @@ class Auth implements AuthInterface
     /**
      * @return mixed
      */
-    public function user()
+    public function hashUser()
     {
-        return $this->user;
+        return Cookie::get('auth_user');
     }
 
     /**
@@ -38,7 +38,7 @@ class Auth implements AuthInterface
         Cookie::set('auth_user', $user);
 
         $this->authorized = true;
-        $this->user       = $user;
+        $this->hash_user  = $user;
     }
 
 
