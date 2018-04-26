@@ -27,7 +27,7 @@ class Connection {
 	{
 		$config = Config::file('database');
 
-		$dsn = 'mysql:host='.$config['host'].';dbname='.$config['dbname'].';charset='.$config['charset'];
+		$dsn = 'mysql:host='.$config['host'].';dbname='.$config['db_name'].';charset='.$config['charset'];
 
 		$this->link = new PDO($dsn, $config['username'], $config['password']);
 
