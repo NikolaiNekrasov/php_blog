@@ -23,7 +23,12 @@ class AdminController extends Controller
         parent::__construct($di);
 
         $this->auth = new Auth();
+
         $this->checkAuthorization();
+
+        if (isset($this->request->get['logout'])) {
+            $this->auth->unAuthorize();
+        }
     }
 
     /**

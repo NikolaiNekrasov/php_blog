@@ -69,7 +69,7 @@ class LoginController extends Controller
                     WHERE id = "' . $user['id'] . '"
                 ');
 
-                $this->auth->authorized($hash);
+                $this->auth->authorize($hash);
 
                 header('Location: /admin/login/', true, 301);
                 exit;

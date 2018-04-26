@@ -1,9 +1,7 @@
 <?php
 
-
 namespace Engine\Core\Auth;
 
-use Engine\Core\Config\Config;
 use Engine\Helper\Cookie;
 
 
