@@ -14,8 +14,20 @@ class PageRepository extends Model
             ->orderBy('id', 'DESC')
             ->sql();
 
-
         return $this->db->query($sql);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function createPage($params)
+    {
+        $page = new Page;
+        $page->setTitle($params['title']);
+        $page->setContent($params['content']);
+        $pageId = $page->save();
+
+        return $pageId;
     }
 
 
