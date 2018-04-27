@@ -14,14 +14,17 @@ class UserRepository extends Model
             ->orderBy('id', 'DESC')
             ->sql();
 
-      
+
         return $this->db->query($sql);
     }
 
     public function test()
     {
-        $user = new User(1);
-        $user->setEmail('admin@admin.com');
+        $user = new User;
+        $user->setEmail('user@admin.com');
+        $user->setPassword(md5(rand(1, 10)));
+        $user->setRole('user');
+        $user->setHash('new');
         $user->save();
     }
 

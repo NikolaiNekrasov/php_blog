@@ -89,7 +89,7 @@ class QueryBuilder
     public function insert($table)
     {
         $this->reset();
-        $this->sql['insert'] = "INSERT INTO {$table}";
+        $this->sql['insert'] = "INSERT INTO {$table} ";
 
         return $this;
     }
