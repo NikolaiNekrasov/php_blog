@@ -32,7 +32,7 @@ class QueryBuilder
      */
     public function from($table)
     {
-        $this->sql['from'] = "FROM {$table}";
+        $this->sql['from'] = "FROM {$table} ";
 
         return $this;
     }
