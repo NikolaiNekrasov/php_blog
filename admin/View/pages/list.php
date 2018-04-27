@@ -2,26 +2,34 @@
 
     <main>
         <div class="container">
-            <h3>Pages <a href="/admin/pages/create/">Create page</a> </h3>
+            <div class="row">
+                <div class="col page-title">
+                    <h3>
+                        Pages
+                        <a href="/admin/pages/create/">Create page</a>
+                    </h3>
+                </div>
+            </div>
+
             <table class="table">
                 <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Title</th>
-                    <th scope="col">Date</th>
+                    <th>#</th>
+                    <th>Title</th>
+                    <th>Date</th>
                 </tr>
                 </thead>
                 <tbody>
+                <?php foreach($pages as $page): ?>
                 <tr>
                     <th scope="row">1</th>
-                    <td>Mark</td>
+                    <td><?= $page['title'] ?></td>
                     <td>Otto</td>
                 </tr>
-
+                <?php endforeach; ?>
                 </tbody>
             </table>
-
-            </div>
-
+        </div>
     </main>
+
 <?php $this->theme->footer(); ?>

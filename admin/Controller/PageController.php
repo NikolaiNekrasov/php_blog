@@ -22,4 +22,12 @@ class PageController extends AdminController
         $this->view->render('pages/create');
     }
 
+    public function add()
+    {
+        $params = $this->request->post;
+
+        print_r($params);
+    }
+
+
 }
