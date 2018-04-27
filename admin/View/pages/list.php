@@ -2,7 +2,7 @@
 
     <main>
         <div class="container">
-            <h3>Pages</h3>
+            <h3>Pages <a href="/admin/pages/create/">Create page</a> </h3>
             <table class="table">
                 <thead>
                 <tr>
@@ -22,6 +22,6 @@
             </table>
 
             </div>
-        </div>
+
     </main>
 <?php $this->theme->footer(); ?>
