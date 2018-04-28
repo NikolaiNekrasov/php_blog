@@ -38,7 +38,17 @@ class PageRepository extends Model
 
         return $pageId;
     }
+    public function updatePage($params)
+    {
+        if (isset($params['page_id'])) {
+            $page = new Page($params['page_id']);
+            $page->setTitle($params['title']);
+            $page->setContent($params['content']);
+            $page->save();
 
+        }
+
+    }
 
 
 
