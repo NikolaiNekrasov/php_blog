@@ -17,7 +17,16 @@ class PageRepository extends Model
         return $this->db->query($sql);
     }
 
+    public function getPageData($id)
+    {
+        $page = new Page($id);
+
+        return $page->findOne();
+    }
+
+
     /**
+     * @param $params
      * @return mixed
      */
     public function createPage($params)

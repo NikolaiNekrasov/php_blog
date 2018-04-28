@@ -24,7 +24,7 @@
                 <tr>
                     <th scope="row"><?= $page['id'] ?></th>
                     <td>
-                        <a href="#">
+                        <a href="/admin/pages/edit/<?= $page['id'] ?>">
                             <?= $page['title'] ?></td>
                         </a>
                     <td><?= $page['date'] ?></td>

@@ -11,8 +11,15 @@ class Theme
         'sidebar' => 'sidebar-%s'
     ];
 
+    /**
+     * Url surrent theme
+     * @type string
+     */
     public $url = '';
 
+    /**
+     * @var array
+     */
     protected  $data = [];
 
     /**
@@ -107,7 +114,7 @@ class Theme
 
         if(is_file($templateFile))
         {
-            extract($data);
+            extract(array_merge($data, $this->data));
             require_once $templateFile;
         }
         else
