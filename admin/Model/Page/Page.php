@@ -12,6 +12,12 @@ class Page
 
     public $id;
 
+    public $title;
+
+    public $content;
+
+    public $date;
+
     /**
      * @return mixed
      */
@@ -28,11 +34,7 @@ class Page
         $this->id = $id;
     }
 
-    public $title;
 
-    public $content;
-
-    public $date;
 
     /**
      * @return mixed
