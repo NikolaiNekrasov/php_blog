@@ -1,20 +1,29 @@
 <?php
 
-
 namespace Engine\Core\Template;
 
 use Engine\Core\Template\Theme;
-
+use Engine\DI\DI;
 
 class View
 {
-    protected  $theme;
+    /**
+     * @var \Engine\DI\DI
+     */
+    public $di;
+
+    /**
+     * @var \Engine\Core\Template\Theme
+     */
+    protected $theme;
 
     /**
      * View constructor.
+     * @param DI $di
      */
-    public function __construct()
+    public function __construct(DI $di)
     {
+        $this->di    = $di;
         $this->theme = new Theme();
     }
 
@@ -23,7 +32,7 @@ class View
      * @param array $vars
      * @throws \Exception
      */
-    public function  render($template, $vars = [])
+    public function render($template, $vars = [])
     {
         $templatePath = $this->getTemplatePath($template, ENV);
 
@@ -34,8 +43,8 @@ class View
             );
         }
 
+        $vars['lang'] = $this->di->get('language');
         $this->theme->setData($vars);
-
         extract($vars);
 
         ob_start();
@@ -59,13 +68,11 @@ class View
      */
     private function getTemplatePath($template, $env = null)
     {
-        if($env == 'Cms')
+        if($env === 'Cms')
         {
             return ROOT_DIR . '/content/themes/default/' . $template . '.php';
         }
 
         return ROOT_DIR . '/View/' . $template . '.php';
     }
-
-
 }

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 return [
     Engine\Service\Database\Provider::class,
@@ -6,5 +6,5 @@ return [
     Engine\Service\View\Provider::class,
     Engine\Service\Config\Provider::class,
     Engine\Service\Request\Provider::class,
-    Engine\Service\load\Provider::class
-  ];
+    Engine\Service\Load\Provider::class
+];

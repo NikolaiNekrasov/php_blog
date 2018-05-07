@@ -7,22 +7,19 @@ use Engine\Core\Request\Request;
 
 class Provider extends AbstractProvider
 {
+
     /**
      * @var string
      */
-
-
     public $serviceName = 'request';
 
     /**
-     * @var mixed
+     * @return mixed
      */
     public function init()
     {
         $request = new Request();
 
         $this->di->set($this->serviceName, $request);
-
     }
-
 }

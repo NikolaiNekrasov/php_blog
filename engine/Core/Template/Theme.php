@@ -2,17 +2,16 @@
 
 namespace Engine\Core\Template;
 
-
 class Theme
 {
     const RULES_NAME_FILE = [
         'header' => 'header-%s',
         'footer' => 'footer-%s',
-        'sidebar' => 'sidebar-%s'
+        'sidebar' => 'sidebar-%s',
     ];
 
     /**
-     * Url surrent theme
+     * Url current theme
      * @type string
      */
     public $url = '';
@@ -20,7 +19,12 @@ class Theme
     /**
      * @var array
      */
-    protected  $data = [];
+    protected $data = [];
+
+    /**
+     * @var array
+     */
+    public $language = [];
 
     /**
      * @param null $name
@@ -32,17 +36,14 @@ class Theme
 
         if($name !== '')
         {
-            $file = sprintf(self::RULES_NAME_FILE['header'],$name);
-
+            $file = sprintf(self::RULES_NAME_FILE['header'], $name);
         }
 
         $this->loadTemplateFile($file);
-
     }
 
     /**
      * @param string $name
-     * @throws \Exception
      */
     public function footer($name = '')
     {
@@ -51,17 +52,14 @@ class Theme
 
         if($name !== '')
         {
-            $file = sprintf(self::RULES_NAME_FILE['footer'],$name);
-
+            $file = sprintf(self::RULES_NAME_FILE['footer'], $name);
         }
 
         $this->loadTemplateFile($file);
-
     }
 
     /**
      * @param string $name
-     * @throws \Exception
      */
     public function sidebar($name = '')
     {
@@ -70,32 +68,24 @@ class Theme
 
         if($name !== '')
         {
-            $file = sprintf(self::RULES_NAME_FILE['sidebar'],$name);
-
+            $file = sprintf(self::RULES_NAME_FILE['sidebar'], $name);
         }
 
         $this->loadTemplateFile($file);
-
     }
 
     /**
      * @param string $name
      * @param array $data
-     * @throws \Exception
      */
     public function block($name = '', $data = [])
     {
         $name = (string) $name;
-        $file = 'block';
 
         if($name !== '')
         {
             $this->loadTemplateFile($name, $data);
-
         }
-
-
-
     }
 
     /**
@@ -111,7 +101,6 @@ class Theme
             $templateFile = ROOT_DIR . '/View/' . $nameFile . '.php';
         }
 
-
         if(is_file($templateFile))
         {
             extract(array_merge($data, $this->data));
@@ -123,7 +112,6 @@ class Theme
                 sprintf('View file %s does not exist!', $templateFile)
             );
         }
-
     }
 
     /**
@@ -135,12 +123,10 @@ class Theme
     }
 
     /**
-     * @param $data
-     * @return mixed
+     * @param array $data
      */
     public function setData($data)
     {
-        return $this->data = $data;
+        $this->data = $data;
     }
-
 }

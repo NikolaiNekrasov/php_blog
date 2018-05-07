@@ -14,14 +14,13 @@ abstract class Model
 
     protected $db;
 
-
     protected $config;
 
-    protected $queryBuilder;
+    public $queryBuilder;
 
     /**
-     * Controller constructor.
-     * @param DI $di
+     * Model constructor.
+     * @param $di
      */
     public function __construct(DI $di)
     {

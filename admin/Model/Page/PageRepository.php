@@ -4,7 +4,6 @@ namespace Admin\Model\Page;
 
 use Engine\Model;
 
-
 class PageRepository extends Model
 {
     public function getPages()
@@ -24,7 +23,6 @@ class PageRepository extends Model
         return $page->findOne();
     }
 
-
     /**
      * @param $params
      * @return mixed
@@ -38,6 +36,7 @@ class PageRepository extends Model
 
         return $pageId;
     }
+
     public function updatePage($params)
     {
         if (isset($params['page_id'])) {
@@ -45,11 +44,6 @@ class PageRepository extends Model
             $page->setTitle($params['title']);
             $page->setContent($params['content']);
             $page->save();
-
         }
-
     }
-
-
-
 }

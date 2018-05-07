@@ -7,23 +7,19 @@ use Engine\Core\Database\Connection;
 
 class Provider extends AbstractProvider
 {
-	/**
-	* @var string
-	*/
-	
 
-	public $serviceName = 'db';
+    /**
+     * @var string
+     */
+    public $serviceName = 'db';
 
-	/**
-	* @var mixed
-	*/
-	public function init()
-	{
-		$db = new Connection();
+    /**
+     * @return mixed
+     */
+    public function init()
+    {
+        $db = new Connection();
 
-		$this->di->set($this->serviceName, $db);
-
-	}
-
+        $this->di->set($this->serviceName, $db);
+    }
 }
- ?>

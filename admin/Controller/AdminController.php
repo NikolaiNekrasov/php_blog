@@ -5,7 +5,6 @@ namespace Admin\Controller;
 use Engine\Controller;
 use Engine\Core\Auth\Auth;
 
-
 class AdminController extends Controller
 {
     /**
@@ -18,10 +17,9 @@ class AdminController extends Controller
      */
     public $data = [];
 
-
     /**
      * AdminController constructor.
-     * @param $di
+     * @param \Engine\DI\DI $di
      */
     public function __construct($di)
     {
@@ -29,10 +27,13 @@ class AdminController extends Controller
 
         $this->auth = new Auth();
 
-        if ($this->auth->hashUser() == null){
-        header( 'Location: /admin/login/');
-        exit;
+        if ($this->auth->hashUser() == null) {
+            header('Location: /admin/login/');
+            exit;
         }
+
+        // Load global language
+        $this->load->language('dashboard/menu');
     }
 
     /**
@@ -46,8 +47,7 @@ class AdminController extends Controller
     public function logout()
     {
         $this->auth->unAuthorize();
-        header( 'Location: /admin/login/');
+        header('Location: /admin/login/');
         exit;
     }
-
 }

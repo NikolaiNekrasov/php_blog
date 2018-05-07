@@ -3,19 +3,18 @@
 namespace Engine\Service\Load;
 
 use Engine\Service\AbstractProvider;
-use Engine\Load;
+use Engine\load;
 
 class Provider extends AbstractProvider
 {
+
     /**
      * @var string
      */
-
-
     public $serviceName = 'load';
 
     /**
-     * @var mixed
+     * @return mixed
      */
     public function init()
     {
@@ -23,6 +22,6 @@ class Provider extends AbstractProvider
 
         $this->di->set($this->serviceName, $load);
 
+        return $this;
     }
-
 }

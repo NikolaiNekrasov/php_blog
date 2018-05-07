@@ -7,22 +7,19 @@ use Engine\Core\Router\Router;
 
 class Provider extends AbstractProvider
 {
-	/**
-	* @var string
-	*/
-	
 
-	public $serviceName = 'router';
+    /**
+     * @var string
+     */
+    public $serviceName = 'router';
 
-	/**
-	* @var mixed
-	*/
-	public function init()
-	{
-		$router = new Router('http://myblog/');
+    /**
+     * @return mixed
+     */
+    public function init()
+    {
+        $router = new Router('http://cms.loc/');
 
-		$this->di->set($this->serviceName, $router);
-
-	}
-
+        $this->di->set($this->serviceName, $router);
+    }
 }
