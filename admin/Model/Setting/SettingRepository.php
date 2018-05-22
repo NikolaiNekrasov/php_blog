@@ -21,11 +21,10 @@ class SettingRepository extends Model
             foreach ($params as $key => $value) {
                 $sql = $this->queryBuilder
                     ->update('setting')
-                    ->set(['value' => $value])
-                    ->where('key_field', $key)
+                    ->set([$key => $value])
+                    ->where($key, $key)
                     ->sql();
-
-                $this->db->execute($sql, $this->queryBuilder->values);
+                print_r($sql);
             }
         }
     }
