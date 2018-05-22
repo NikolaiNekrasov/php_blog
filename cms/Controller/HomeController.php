@@ -7,7 +7,7 @@ class HomeController extends CmsController
 
     public function index()
     {
-        $data = ['name' => 'Artem'];
+        $data = ['name' => 'Nick'];
         $this->view->render('index', $data);
      }
     public function news($id)
