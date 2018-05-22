@@ -4,9 +4,11 @@ namespace Engine\Core\Auth;
 
 use Engine\Helper\Cookie;
 
-
 class Auth implements AuthInterface
 {
+    /**
+     * @var bool
+     */
     protected $authorized = false;
     protected $hash_user;
 
@@ -16,7 +18,11 @@ class Auth implements AuthInterface
     public function authorized()
     {
         return $this->authorized;
+    }
 
+    public function setAuthorized()
+    {
+        $this->authorized = true;
     }
 
     /**
@@ -28,26 +34,28 @@ class Auth implements AuthInterface
     }
 
     /**
+     * User authorization
      * @param $user
      */
     public function authorize($user)
     {
         Cookie::set('auth_authorized', true);
         Cookie::set('auth_user', $user);
-
     }
 
-
+    /**
+     * User unAuthorization
+     * @return void
+     */
     public function unAuthorize()
     {
         Cookie::delete('auth_authorized');
         Cookie::delete('auth_user');
-
     }
 
     /**
      * Generates a new random password salt
-     * @return string
+     * @return int
      */
     public static function salt()
     {
@@ -56,7 +64,7 @@ class Auth implements AuthInterface
 
     /**
      * Generates a hash
-     * @param $password
+     * @param string $password
      * @param string $salt
      * @return string
      */
@@ -64,5 +72,4 @@ class Auth implements AuthInterface
     {
         return hash('sha256', $password . $salt);
     }
-
 }

@@ -1,24 +1,19 @@
 <?php
 
-
 namespace Engine\Core\Config;
-
 
 class Config
 {
-
     /**
      * @param $key
      * @param string $group
      * @return null
-     * @throws \Exception
      */
-    public  static function item($key, $group = 'main')
+    public static function item($key, $group = 'main')
     {
         $groupItems = static::file($group);
 
         return isset($groupItems[$key]) ? $groupItems[$key] : null;
-
     }
 
     /**
@@ -38,17 +33,15 @@ class Config
             {
                 return $items;
             }
-
             else
             {
                 throw new \Exception(
-                    sprintf('Config file <strong>%s</strong> is not valid array.', $path)
+                    sprintf(
+                        'Config file <strong>%s</strong> is not a valid array.', $path
+                    )
                 );
             }
-
-
         }
-
         else
         {
             throw new \Exception(
@@ -57,7 +50,5 @@ class Config
         }
 
         return false;
-
     }
-
 }

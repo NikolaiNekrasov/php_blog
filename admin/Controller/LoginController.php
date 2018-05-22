@@ -7,8 +7,6 @@ use Engine\DI\DI;
 use Engine\Core\Auth\Auth;
 use Engine\Core\Database\QueryBuilder;
 
-
-
 class LoginController extends Controller
 {
     /**
@@ -31,18 +29,16 @@ class LoginController extends Controller
             header( 'Location: /admin/');
             exit;
         }
-
     }
-
 
     public function form()
     {
-       $this->view->render('login');
+        $this->view->render('login');
     }
 
     public function authAdmin()
     {
-        $params = $this->request->post;
+        $params       = $this->request->post;
         $queryBuilder = new QueryBuilder();
 
         $sql = $queryBuilder
@@ -52,7 +48,6 @@ class LoginController extends Controller
             ->where('password', md5($params['password']))
             ->limit(1)
             ->sql();
-
 
         $query = $this->db->query($sql, $queryBuilder->values);
 
@@ -66,16 +61,16 @@ class LoginController extends Controller
                     ->update('user')
                     ->set(['hash' => $hash])
                     ->where('id', $user['id'])->sql();
+
                 $this->db->execute($sql, $queryBuilder->values);
 
                 $this->auth->authorize($hash);
 
-                header('Location: /admin/login/');
+                header( 'Location: /admin/login/');
                 exit;
             }
         }
 
         echo 'Incorrect email or password.';
     }
-
 }

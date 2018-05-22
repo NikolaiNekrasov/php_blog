@@ -7,22 +7,19 @@ use Engine\Core\Template\View;
 
 class Provider extends AbstractProvider
 {
+
     /**
      * @var string
      */
-
-
     public $serviceName = 'view';
 
     /**
-     * @var mixed
+     * @return mixed
      */
     public function init()
     {
-        $view = new View();
+        $view = new View($this->di);
 
         $this->di->set($this->serviceName, $view);
-
     }
-
 }
