@@ -17,6 +17,11 @@ class View
     protected $theme;
 
     /**
+     * @var $setting
+     */
+    protected $setting;
+
+    /**
      * View constructor.
      * @param DI $di
      */
@@ -24,6 +29,9 @@ class View
     {
         $this->di    = $di;
         $this->theme = new Theme();
+        $this->setting = new Setting($di);
+
+        echo Setting::get('name_site');
     }
 
     /**
@@ -33,6 +41,7 @@ class View
      */
     public function render($template, $data = [])
     {
+        include_once $this->getThemePath() . '/functions.php';
         $templatePath = $this->getTemplatePath($template, ENV);
 
         if (!is_file($templatePath)) {
@@ -73,5 +82,10 @@ class View
         }
 
         return path('view') . '/' . $template . '.php';
+    }
+
+    private function getThemePath()
+    {
+        return ROOT_DIR . '/content/themes/default';
     }
 }
