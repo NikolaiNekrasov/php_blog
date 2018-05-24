@@ -9,10 +9,10 @@
 function path($section)
 {
 
-    $pathMask = ROOT_DIR . DS . '%s';
+    $pathMask = ROOT_DIR . DIRECTORY_SEPARATOR . '%s';
 
     if (ENV == 'Cms') {
-        $pathMask = ROOT_DIR . DS . strtolower(ENV) . DS . '%s';
+        $pathMask = ROOT_DIR . DIRECTORY_SEPARATOR . strtolower(ENV) . DIRECTORY_SEPARATOR . '%s';
     }
 
     switch (strtolower($section))
@@ -48,7 +48,7 @@ function languages()
         unset($list[1]);
 
         foreach ($list as $dir) {
-            $pathLangDir = $directory . DS . $dir;
+            $pathLangDir = $directory . DIRECTORY_SEPARATOR . $dir;
             $pathConfig  = $pathLangDir . '/config.json';
             if (is_dir($pathLangDir) and is_file($pathConfig)) {
                 $config = file_get_contents($pathConfig);

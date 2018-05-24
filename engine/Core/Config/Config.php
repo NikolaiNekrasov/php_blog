@@ -43,7 +43,7 @@ class Config
      */
     public static function file($group = 'main')
     {
-        $path = path('config') . DS . $group . '.php';
+        $path = path('config') . DIRECTORY_SEPARATOR . $group . '.php';
 
         // Check that the file exists before we attempt to load it.
         if (file_exists($path)) {

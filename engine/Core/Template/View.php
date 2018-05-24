@@ -30,8 +30,6 @@ class View
         $this->di    = $di;
         $this->theme = new Theme();
         $this->setting = new Setting($di);
-
-        echo Setting::get('name_site');
     }
 
     /**
@@ -41,7 +39,11 @@ class View
      */
     public function render($template, $data = [])
     {
-        include_once $this->getThemePath() . '/functions.php';
+        $functions = Theme::getThemePath() . '/functions.php';
+        if (file_exists($functions)) {
+            include_once $functions;
+        }
+
         $templatePath = $this->getTemplatePath($template, ENV);
 
         if (!is_file($templatePath)) {
