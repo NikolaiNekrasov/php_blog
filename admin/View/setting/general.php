@@ -17,7 +17,7 @@
                                     <?= $setting->name ?>
                                 </label>
                                 <div class="col-10">
-                                    <select class="form-control" name="<?= $setting->key_field ?>" value="<?= $setting->value ?>" id="formNameSite">
+                                    <select class="form-control" name="<?= $setting->key_field ?>" value="<?= $setting->key_field ?>" id="formNameSite">
                                         <?php foreach ($languages as $language): ?>
                                             <option value="<?= $language->info->key ?>">
                                                 <?= $language->info->title ?>
@@ -32,12 +32,12 @@
                                         <?= $setting->name ?>
                                     </label>
                                     <div class="col-10">
-                                        <input class="form-control" type="text" name="<?= $setting->get_field ?>" value="<?= $setting->value ?>" id="formNameSite">
+                                        <input class="form-control" type="text" name="<?= $setting->key_field ?>" value="<?= $setting->value ?>" id="formNameSite">
                                     </div>
                             </div>
                             <?php endif; ?>
                             <?php endforeach; ?>
-                            <button type="submit" class="btn btn-primary">Save changes</button>
+                            <button type="submit" class="btn btn-primary" onclick="setting.update(); return false;">Save changes</button>
                 </form>
             </div>
         </div>
