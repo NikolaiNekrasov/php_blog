@@ -5,13 +5,12 @@ var setting = {
     update: function() {
         var formData = $('#settingForm').serialize();
 
+        console.log(formData);
+
         $.ajax({
             url: '/admin/settings/update/',
             type: this.ajaxMethod,
             data: formData,
-            cache: false,
-            processData: false,
-            contentType: false,
             beforeSend: function(){
 
             },

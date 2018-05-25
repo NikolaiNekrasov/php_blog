@@ -9,15 +9,15 @@
         </div>
         <div class="row">
             <div class="col">
-                <form>
+                <form id="settingForm">
                     <?php foreach($settings as $setting):?>
                         <?php if($setting->key_field == 'language'): ?>
                             <div class="form-group row">
-                                <label for="formNameSite" class="col-2 col-form-label">
+                                <label for="formLangSite" class="col-2 col-form-label">
                                     <?= $setting->name ?>
                                 </label>
                                 <div class="col-10">
-                                    <select class="form-control" name="<?= $setting->key_field ?>" value="<?= $setting->key_field ?>" id="formNameSite">
+                                    <select class="form-control" name="<?= $setting->key_field ?>" " id="formLangSite">
                                         <?php foreach ($languages as $language): ?>
                                             <option value="<?= $language->info->key ?>">
                                                 <?= $language->info->title ?>
